@@ -20,3 +20,18 @@ function listarAlunos(){
     /*Com essa função o usuário poderá ver todos os alunos cadastrados atualmente no sistema. 
     Vale dizer que As informações deverão ser exibidas em um formato amigável.*/
 };
+
+function buscarAluno(nome){
+    let alunoEncontrado = false;
+
+    let resultado = alunosDaEscola.find((aluno) => {
+        if (aluno.nome == nome) {
+            alunoEncontrado = true;
+            console.log(`Aluno ${nome} encontrado com sucesso.`);
+            return aluno;
+        }
+    });
+    
+    return alunoEncontrado ? resultado : console.log(`Aluno ${nome} não foi encontrado na lista de alunos matriculados.`);
+    /* Por meio dessa função, podemos pesquisar um aluno por nome na lista de aluno. Ela deverá exibir um feedback, tanto para quando encontrar o aluno, tanto quando não encontrar. E deverá devolver um aluno em seu retorno. */
+};

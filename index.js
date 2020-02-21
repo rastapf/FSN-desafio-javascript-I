@@ -44,3 +44,15 @@ function matricularAluno(aluno, curso){
     Essa função só poderá ser executada em um aluno já devidamente cadastrado no sistema, e deverá armazenar a data atual no momento da matricula
     Lembre-se de exibir o feedback para o usuário. */
 };
+
+function aplicarFalta(aluno){
+    if (aluno.cursos.length != 0) {
+        aluno.faltas ++;
+        console.log(`Falta adicionada ao aluno ${aluno.nome}.`);
+    } else {
+        console.log(`Aluno ${aluno.nome} não está matriculado em nenhum curso.`)
+    };
+    /*
+     Ao receber um aluno devidamente cadastrado em nossa lista. Você deverá incrementar uma falta ao aluno. Você deverá dar um feedback ao concluir a tarefa. Só poderá aplicar falta em aluno se o mesmo tiver matriculado em um curso.
+    */
+};

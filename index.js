@@ -1,9 +1,3 @@
-const readline = require('readline');
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
-
 // Base a ser utilizada
 const alunosDaEscola=[{nome:"Henrique",notas:[],cursos:[],faltas:5},{nome:"Edson",notas:[],cursos:[],faltas:2},{nome:"Bruno",notas:[10,9.8,9.6],cursos:[],faltas:0},{nome:"Guilherme",notas:[10,9.8,9.6],cursos:[{nomeDoCurso:"Full Stack",dataMatricula:new Date}],faltas:0},{nome:"Carlos",notas:[],cursos:[],faltas:0},{nome:"Lucca",notas:[10,9.8,9.6],cursos:[{nomeDoCurso:"UX",dataMatricula:new Date}],faltas:0}];
 
@@ -63,13 +57,10 @@ function aplicarFalta(aluno){
     */
 };
 
-function aplicarNota(aluno){
+function aplicarNota(aluno, nota){
     if (aluno.cursos.length != 0) {
-        rl.question(`Insira a nota do aluno ${aluno.nome}: `, function(nota){
             aluno.notas.push(nota);
             console.log(`Aluno ${aluno.nome} recebeu a nota ${nota} com sucesso.`);
-            rl.close();
-        })
     } else {
         console.log(`Aluno ${aluno.nome} não está matriculado em nenhum curso.`);
     };

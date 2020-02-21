@@ -78,3 +78,20 @@ function aplicarNota(aluno){
     */
 };
   
+function aprovarAluno(aluno){
+    if (aluno.cursos.length != 0) {
+        let media = aluno.notas.reduce((total, nota) => {return total + nota}) / aluno.notas.length;
+        console.log(media);
+        if  (media >= 7 && aluno.faltas <= 3) {
+            console.log(`Aluno ${aluno.nome} foi aprovado!`);
+        } else {
+            console.log(`Aluno ${aluno.nome} foi reprovado...`);
+        };
+    } else {
+        console.log(`Aluno ${aluno.nome} não está matriculado em nenhum curso.`);
+    }
+     /* 
+     Ao receber um aluno devidamente cadastrado em nossa lista, deverá dizer se o mesmo está aprovado ou não. Os critérios de aprovação são: ter no máximo 3 faltas e média 7 em notas.
+     Só o aluno só poderá ser aprovado se o mesmo tiver matriculado em um curso.
+     */
+};

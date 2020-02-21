@@ -1,3 +1,9 @@
+const readline = require('readline');
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
 // Base a ser utilizada
 const alunosDaEscola=[{nome:"Henrique",notas:[],cursos:[],faltas:5},{nome:"Edson",notas:[],cursos:[],faltas:2},{nome:"Bruno",notas:[10,9.8,9.6],cursos:[],faltas:0},{nome:"Guilherme",notas:[10,9.8,9.6],cursos:[{nomeDoCurso:"Full Stack",dataMatricula:new Date}],faltas:0},{nome:"Carlos",notas:[],cursos:[],faltas:0},{nome:"Lucca",notas:[10,9.8,9.6],cursos:[{nomeDoCurso:"UX",dataMatricula:new Date}],faltas:0}];
 
@@ -56,3 +62,19 @@ function aplicarFalta(aluno){
      Ao receber um aluno devidamente cadastrado em nossa lista. Você deverá incrementar uma falta ao aluno. Você deverá dar um feedback ao concluir a tarefa. Só poderá aplicar falta em aluno se o mesmo tiver matriculado em um curso.
     */
 };
+
+function aplicarNota(aluno){
+    if (aluno.cursos.length != 0) {
+        rl.question(`Insira a nota do aluno ${aluno.nome}: `, function(nota){
+            aluno.notas.push(nota);
+            console.log(`Aluno ${aluno.nome} recebeu a nota ${nota} com sucesso.`);
+            rl.close();
+        })
+    } else {
+        console.log(`Aluno ${aluno.nome} não está matriculado em nenhum curso.`);
+    };
+    /*
+     Ao receber um aluno devidamente cadastrado em nossa lista. Você deverá adicionar uma nota ao aluno na sua lista de notas. Você deverá dar um feedback ao concluir a tarefa. Só poderá aplicar nota em aluno se o mesmo tiver matriculado em um curso.
+    */
+};
+  

@@ -3,3 +3,11 @@ const alunosDaEscola=[{nome:"Henrique",notas:[],cursos:[],faltas:5},{nome:"Edson
 
 
 // implementação
+function adicionarAluno(nome){
+    alunosDaEscola.push({nome, notas: [], cursos:[], faltas:0});
+    return console.log(`Aluno ${nome} adicionado com sucesso!`);
+  
+    /*Essa função irá receber uma *string* que é nome do aluno a ser criado. 
+    E seguindo o modelo de aluno, o mesmo deverá ser inserido na lista de alunos.
+    A função deve devolver um feedback de sucesso, caso o aluno seja inserido corretamente.*/
+}

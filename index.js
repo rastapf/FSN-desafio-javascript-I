@@ -11,3 +11,12 @@ function adicionarAluno(nome){
     E seguindo o modelo de aluno, o mesmo deverá ser inserido na lista de alunos.
     A função deve devolver um feedback de sucesso, caso o aluno seja inserido corretamente.*/
 }
+
+function listarAlunos(){
+    alunosDaEscola.forEach((aluno) => {
+        console.log(`Aluno: ${aluno.nome}`);
+        console.log('*'.repeat(80));
+    });
+    /*Com essa função o usuário poderá ver todos os alunos cadastrados atualmente no sistema. 
+    Vale dizer que As informações deverão ser exibidas em um formato amigável.*/
+};

@@ -35,3 +35,12 @@ function buscarAluno(nome){
     return alunoEncontrado ? resultado : console.log(`Aluno ${nome} não foi encontrado na lista de alunos matriculados.`);
     /* Por meio dessa função, podemos pesquisar um aluno por nome na lista de aluno. Ela deverá exibir um feedback, tanto para quando encontrar o aluno, tanto quando não encontrar. E deverá devolver um aluno em seu retorno. */
 };
+
+function matricularAluno(aluno, curso){
+    aluno.cursos.push({nomeDoCurso: curso, dataMatricula: new Date});
+    console.log(`Aluno ${aluno.nome} cadastrado com sucesso no curso: ${curso} em ${aluno.cursos[aluno.cursos.length - 1].dataMatricula}.`)
+
+    /* Essa funcionalidade irá permitir, cadastrar um aluno em um curso. 
+    Essa função só poderá ser executada em um aluno já devidamente cadastrado no sistema, e deverá armazenar a data atual no momento da matricula
+    Lembre-se de exibir o feedback para o usuário. */
+};
